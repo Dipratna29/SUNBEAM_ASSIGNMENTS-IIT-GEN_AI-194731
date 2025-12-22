@@ -17,7 +17,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("📊 CSV → SQL AI Assistant")
+st.title("📊📈📉 CSV → SQL AI Assistant")
 st.caption("Chat with your CSV files using SQL powered by Groq LLM")
 
 # ---------------------------------

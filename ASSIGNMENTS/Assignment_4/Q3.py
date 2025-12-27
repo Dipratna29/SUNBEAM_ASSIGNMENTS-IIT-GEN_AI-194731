@@ -11,7 +11,7 @@ if "messages" not in st.session_state:
 def stream_reply(text):
     for word in text.split():
         yield word + " "
-        time.sleep(0.2)   # delay for chat effect
+        time.sleep(0.2)   # delay 
 
 
 

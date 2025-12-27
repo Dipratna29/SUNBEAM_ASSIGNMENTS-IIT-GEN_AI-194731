@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-# ---------- Session State ----------
+
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
 
@@ -9,34 +9,34 @@ if "logout" not in st.session_state:
     st.session_state.logout = False
 
 
-# ---------- Fake Login Function ----------
+
 def login(username, password):
     return username == password
 
 
-# ---------- Get Weather Function ----------
+
 def get_weather(city):
     url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid=13226762cf08d11904e1fd2ee94af569&units=metric"
     response = requests.get(url)
     return response.json()
 
 
-# ---------- Logout ----------
+
 def logout():
     st.session_state.logged_in = False
     st.session_state.logout = True
 
 
-# ---------- UI ----------
+
 st.title(" Weather Application")
 
-# ----- Logout Message -----
+
 if st.session_state.logout:
     st.success(" Thanks for using the application!")
     st.stop()
 
 
-# ----- Login Page -----
+
 if not st.session_state.logged_in:
     st.subheader(" Login")
 
@@ -50,7 +50,7 @@ if not st.session_state.logged_in:
         else:
             st.error("Invalid login! Username and password must be same.")
 
-# ----- Weather Page -----
+
 else:
     st.subheader(" Current Weather")
 
